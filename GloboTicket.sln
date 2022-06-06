@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GloboTicket.Domain", "Globo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.Infrastructure", "GloboTicket.Infrastructure\GloboTicket.Infrastructure.csproj", "{CB4E7690-AF98-4E0F-8470-93BB0D839D51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.API", "GloboTicket.API\GloboTicket.API.csproj", "{3BA4262D-DCF1-4DAB-8DB0-60E0C8DE48DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.SharedKernel", "GloboTicket.SharedKernel\GloboTicket.SharedKernel.csproj", "{DD4BAA6A-7D14-44CC-8253-A9E813CBBF1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GloboTicket.UnitTest", "GloboTicket.UnitTest\GloboTicket.UnitTest.csproj", "{1E99341D-B5B3-4C20-9F31-8B0188F0079C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{CB4E7690-AF98-4E0F-8470-93BB0D839D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB4E7690-AF98-4E0F-8470-93BB0D839D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB4E7690-AF98-4E0F-8470-93BB0D839D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BA4262D-DCF1-4DAB-8DB0-60E0C8DE48DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA4262D-DCF1-4DAB-8DB0-60E0C8DE48DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA4262D-DCF1-4DAB-8DB0-60E0C8DE48DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA4262D-DCF1-4DAB-8DB0-60E0C8DE48DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD4BAA6A-7D14-44CC-8253-A9E813CBBF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4BAA6A-7D14-44CC-8253-A9E813CBBF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4BAA6A-7D14-44CC-8253-A9E813CBBF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4BAA6A-7D14-44CC-8253-A9E813CBBF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E99341D-B5B3-4C20-9F31-8B0188F0079C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E99341D-B5B3-4C20-9F31-8B0188F0079C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E99341D-B5B3-4C20-9F31-8B0188F0079C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E99341D-B5B3-4C20-9F31-8B0188F0079C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

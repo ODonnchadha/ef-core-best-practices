@@ -25,5 +25,13 @@
   
   - DOMAIN: Use the generic DbContextOptions. Keep entity configuration(s) isolated.
   - INFRASTRUCTURE: Keep DB configuration seperate from application domain. Keep migrations seperate from model.
+  - API: Configure dependencies at the top level.
+  - Dependency Inversion Principle:
+    - Depend upon abstract interfaces instead of concrete implementations.
+  - SHARED KERNEL: Invert dependencies to defend seperation of concerns. Rely on IoC to satisfy dependencies.
+  - How do we get a low-level component to call a higher-level component? Dependency inversion.
+  - Fakes: Avoid unit testing EF and, obviously, SQL Server. Use the in-memory query provider.
+    - EF Core In-Memory package.
+  - UNIT TESTS: Use the in-memory auery provider. Isolate tests from one another. (X-Unit test project.)
 
 - DESIGNING SECURITY INTO YOUR APPLICATION & PROCESS:

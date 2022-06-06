@@ -1,26 +1,29 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GloboTicket.Domain.Entities;
+using GloboTicket.SharedKernel.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace GloboTicket.Domain;
+
 public class GloboTicketContext : DbContext
 {
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-    public GloboTicketContext(DbContextOptions<GloboTicketContext> options) :
-#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-        base(options)
-    {
-    }
+    //private readonly IModelConfiguration modelConfiguration;
 
-    /// <summary>
-    /// NOTE: The convention of singular table names. Why?
-    /// (1) 1:1 Code versus database.
-    /// (2) Define entity without explicit override for table name.
-    /// </summary>
+    //public GloboTicketContext(DbContextOptions<GloboTicketContext> options, IModelConfiguration modelConfiguration) :
+    //    base(options)
+    //{
+    //    this.modelConfiguration = modelConfiguration;
+    //}
+
+    public GloboTicketContext(DbContextOptions<GloboTicketContext> options) :
+    base(options) { }
+
     public DbSet<Venue> Venue { get; set; }
+    public DbSet<Act> Act { get; set; }
+    public DbSet<Show> Show { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // IEntityTypeConfiguration definition:
-        modelBuilder.ApplyConfigurationsFromAssembly(
-            typeof(GloboTicketContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(GloboTicketContext).Assembly);
+        // modelConfiguration.ConfigureModel(modelBuilder);
     }
 }
