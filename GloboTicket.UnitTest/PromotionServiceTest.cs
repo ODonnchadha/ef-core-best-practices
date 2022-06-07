@@ -18,7 +18,7 @@ public class PromotionServiceTest
         var options = new DbContextOptionsBuilder<GloboTicketContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString())
             .Options;
-        var context = new GloboTicketContext(options);
+        var context = new GloboTicketContext(options, new TestModelConfiguration());
         promotionService = new PromotionService(context);
     }
 

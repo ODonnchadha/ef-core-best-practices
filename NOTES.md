@@ -35,3 +35,28 @@
   - UNIT TESTS: Use the in-memory auery provider. Isolate tests from one another. (X-Unit test project.)
 
 - DESIGNING SECURITY INTO YOUR APPLICATION & PROCESS:
+  - Why would an application ever need to drop a table? Principle of least privilege:
+    - An actor should have only the privileges necessary to perform its function.
+  - Database Operations:
+    - DML: Data Manipulation Language: SELECT. INSERT. UPDATE. DELETE. db_datareader; db_datawriter;
+    - DDL: Data Definition Language: CREATE. DROP. ALTER. TRUNCATE. db_ddladmin;
+    - DCL: Data Control Language: GRANT. DENY. REVOKE. db_securityadmin;
+  - Most permissive: db_owner; EF: Two (2) Actors:
+    - Application: DML. db_datareader; db_datawriter;
+    - Migrations: DML. DDL. DCL. db_datareader; db_datawriter; db_ddladmin; db_securityadmin; => db_owner;
+  - (1) Change appsettings.json connection string. (2) Create a design-time DbContext factory for migrations, et al.
+  - NOTE: Currently, migrations will use the same connection string as the running api. (Can use --connection flag via command line.)
+  - Create a database role. Create an application login.
+  - Shift Left: Consider application security in the early stages of the delivery process.
+    - If developers operate under minimal privilidges during coding, any escalations that need to occur are then immediately observed.
+    - Avoid secrets in appsettings.Developmnets.json.
+    - %APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json
+  - Within Visual Studio: Select "Manage User Secrets." (With VS COde: Install ".NET Core User Secrets.")
+  - Deployment? Azure Key Vault. AWS Key Manager.
+  - Azure: Configure managed identity for the app service. Set the connection string. Azure active directory.
+  - "Active Directory Default" authentication.
+  - Secure databases: Principle of least privilege. Application databse role. Design-time DbContext factory. 
+    - Shift left. User secrets. Strongest available sevret manager.
+
+- AUTOMATING SCHEMA EVOLUTION WITH MIGRATION BUNDLES & DOCKER:
+  - 

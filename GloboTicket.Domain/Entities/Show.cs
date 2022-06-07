@@ -1,11 +1,11 @@
-﻿namespace GloboTicket.Domain.Entities
+﻿namespace GloboTicket.Domain.Entities;
+
+public class Show
 {
-    public class Show
-    {
-        public int ShowId { get; set; }
-        public Guid ShowGuid { get; set; }
-        public Venue Venue { get; set; }
-        public Act Act { get; set; }
-        public DateTimeOffset Date { get; set; }
-    }
+    public int ShowId { get; set; }
+
+    public Guid ShowGuid { get; set; }
+    public Venue Venue { get; set; }
+    public Act Act { get; set; }
+    public DateTimeOffset Date { get; set; }
 }

@@ -12,7 +12,7 @@ namespace GloboTicket.Infrastructure.Configuration
     {
         public void Configure(EntityTypeBuilder<Venue> builder)
         {
-            builder.ToTable("VenueTable");
+            // builder.ToTable("VenueTable");
         }
     }
 }

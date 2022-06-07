@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace GloboTicket.SharedKernel.Configuration
+namespace GloboTicket.SharedKernel.Configuration;
+
+public interface IModelConfiguration
 {
-    public interface IModelConfiguration
-    {
-        void ConfigureModel(ModelBuilder builder);
-    }
+    void ConfigureModel(ModelBuilder modelBuilder);
 }

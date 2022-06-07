@@ -1,58 +1,57 @@
 ﻿using GloboTicket.Domain.Entities;
 
-namespace GloboTicket.Domain.Services
+namespace GloboTicket.Domain.Services;
+
+public class PromotionService
 {
-    public class PromotionService
+    private GloboTicketContext context;
+
+    public PromotionService(GloboTicketContext context)
     {
-        private GloboTicketContext context;
+        this.context = context;
+    }
 
-        public PromotionService(GloboTicketContext context)
+    public async Task<Show> BookShow(Venue venue, Act act, DateTimeOffset date)
+    {
+        var show = new Show
         {
-            this.context = context;
-        }
+            Venue = venue,
+            Act = act,
+            Date = date
+        };
 
-        public async Task<Show> BookShow(Venue venue, Act act, DateTimeOffset date)
+        await context.AddAsync(show);
+        await context.SaveChangesAsync();
+
+        return show;
+    }
+
+    public async Task<Venue> CreateVenue(Guid venueGuid, string name, string address)
+    {
+        var venue = new Venue
         {
-            var show = new Show
-            {
-                Venue = venue,
-                Act = act,
-                Date = date
-            };
+            VenueGuid = venueGuid,
+            Name = name,
+            Address = address
+        };
 
-            await context.AddAsync(show);
-            await context.SaveChangesAsync();
+        await context.AddAsync(venue);
+        await context.SaveChangesAsync();
 
-            return show;
-        }
+        return venue;
+    }
 
-        public async Task<Venue> CreateVenue(Guid venueGuid, string name, string address)
+    public async Task<Act> CreateAct(Guid actGuid, string name)
+    {
+        var act = new Act
         {
-            var venue = new Venue
-            {
-                VenueGuid = venueGuid,
-                Name = name,
-                Address = address
-            };
+            ActGuid = actGuid,
+            Name = name
+        };
 
-            await context.AddAsync(venue);
-            await context.SaveChangesAsync();
+        await context.AddAsync(act);
+        await context.SaveChangesAsync();
 
-            return venue;
-        }
-
-        public async Task<Act> CreateAct(Guid actGuid, string name)
-        {
-            var act = new Act
-            {
-                ActGuid = actGuid,
-                Name = name
-            };
-
-            await context.AddAsync(act);
-            await context.SaveChangesAsync();
-
-            return act;
-        }
+        return act;
     }
 }
